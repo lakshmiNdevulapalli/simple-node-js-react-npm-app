@@ -9,8 +9,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'npm cache clean -f'
-        sh 'sudo npm install'
+        sh 'npm config set unsafe-perm=true'
+        sh 'npm install'
       }
     }
     stage('Test') {

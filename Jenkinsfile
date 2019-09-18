@@ -10,10 +10,6 @@ pipeline {
     stage('Build') {
       steps {
         nodejs('nodejs') {
-          sh 'mkdir ~/.npm-global'
-          sh 'npm config set prefix '~/.npm-global''
-          sh 'export PATH=~/.npm-global/bin:$PATH'
-          sh 'source ~/.profile'
           sh 'npm install'
         }
 

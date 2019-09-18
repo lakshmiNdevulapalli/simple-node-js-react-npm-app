@@ -9,7 +9,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'npm config set unsafe-perm=true'
+        sh 'sudo npm cache clean'
+        sh 'sudo npm update -g ionic'
         sh 'npm install'
       }
     }
